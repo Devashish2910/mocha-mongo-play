@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('./../connection/connection');
 const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({

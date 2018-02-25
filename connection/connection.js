@@ -10,10 +10,13 @@ mongoose.connect('mongodb://localhost:27017/blogs');
 // check connection
 before(done => {
   mongoose.connection
-   .once('open', () => {})
+   .once('open', () => done())
    .on('error', (err) => {
      console.warn(err);
    });
 });
 
 // drop all collection before new test cases
+
+
+module.exports = mongoose;
