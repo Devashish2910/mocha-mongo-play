@@ -22,7 +22,7 @@ describe('CREATE', () => {
      });
   });
 
-  it('Create Blog', done => {
+  xit('Create Blog', done => {
     User.findOne({_id: deva._id})
      .populate({path: 'blogs'})
      .then(res => {
@@ -31,6 +31,7 @@ describe('CREATE', () => {
        done();
      })
   });
+
 });
 
 //{path:'blogPosts',populate:{path:'comments',populate:{path:'user'}}}

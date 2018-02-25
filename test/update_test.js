@@ -22,7 +22,11 @@ describe('UPDATE', () => {
      });
   });
 
-  it('Increase Likes', done => {
+  xit('Increase Likes', done => {
+    // $inc is the update operator
+    /*Query Meaning: Go to Blog Collection, find a blog whose _id == blog.id and
+       increment the likes of that id by 1.
+    */
     Blog.findByIdAndUpdate(blog._id, {$inc: {likes: 1}})
      .then(res => {
        Blog.findById(blog._id)
