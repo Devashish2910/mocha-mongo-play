@@ -17,6 +17,18 @@ before(done => {
 });
 
 // drop all collection before new test cases
-
+beforeEach(done => {
+  const {blogs, comments, users} = mongoose.connection.collections;
+  users.drop()
+   .then(() => {
+     comments.drop()
+      .then(() => {
+        blogs.drop()
+         .then(() => {
+           done();
+         });
+      });
+   });
+});
 
 module.exports = mongoose;
